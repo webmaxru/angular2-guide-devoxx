@@ -1,0 +1,35 @@
+<h3>Template-driven form</h3>
+<form #templateDrivenForm="ngForm" (ngSubmit)="onSubmitTemplateDrivenForm()" novalidate>
+  <p>
+    <label>Name:</label><br />
+    <input type="text" [ngModel]="feedbackObject.firstName" (ngModelChange)="feedbackObject.firstName = $event" #firstName="ngForm" required>
+    <span [hidden]="firstName.valid || firstName.pristine">
+      Name is required
+    </span>
+  </p>
+  <p>
+    <label>Message:</label><br />
+    <textarea [(ngModel)]="feedbackObject.message" #message="ngForm" required></textarea>
+    <span [hidden]="message.valid || message.pristine">
+      Message is required
+    </span>
+  </p>
+  <p>
+    <button type="submit">Submit</button>
+  </p>
+</form>
+
+<!-- <h3>Model-driven form</h3>
+<form [ngFormModel]="modelDrivenForm" (ngSubmit)="onSubmitModelDrivenForm()">
+  <p>
+    <label>Name:</label><br />
+    <input type="text" ngControl="firstName">
+  </p>
+  <p>
+    <label>Message:</label><br />
+    <textarea ngControl="message"></textarea>
+  </p>
+  <p>
+    <button type="submit" [disabled]="!modelDrivenForm.valid">Submit</button>
+  </p>
+</form> -->

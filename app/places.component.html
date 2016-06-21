@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let place of places">
+
+    <place [name]="place.name" (visit)="logVisited($event.name)"></place>
+
+  </li>
+</ul>
