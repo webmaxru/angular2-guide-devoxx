@@ -1,7 +1,7 @@
-<ul>
-  <li *ngFor="let place of places">
+<div class="component">
 
-    <place [name]="place.name" (visit)="logVisited($event.name)"></place>
+    <h2>Best places to visit</h2>
 
-  </li>
-</ul>
+    <place *ngFor="let place of places" [name]="place.name" (visit)="logVisited($event.name)"></place>
+
+</div>

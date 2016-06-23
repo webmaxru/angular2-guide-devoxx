@@ -1,18 +1,16 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'guide',
-  template: `
-	<h1>Hello {{city}}!</h1>
-	`,
+    selector: 'guide',
+    templateUrl: 'app/guide.component.html',
 })
 
 export class GuideComponent {
 
-  city: string;
+    city: string;
 
-  constructor() {
-    this.city = 'Krakow'
-  }
+    constructor() {
+        this.city = 'Krakow'
+    }
 
 }
